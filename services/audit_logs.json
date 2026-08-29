@@ -1,0 +1,2299 @@
+[
+  {
+    "timestamp": "2026-08-28T23:09:09.123180",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability and temporary bank downtime."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Retry scheduled after 30 minutes."
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered."
+    }
+  },
+  {
+    "timestamp": "2026-08-28T23:09:14.261064",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability and temporary bank downtime."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Retry scheduled after 30 minutes."
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered."
+    }
+  },
+  {
+    "timestamp": "2026-08-28T23:10:58.861287",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "Failure is due to temporary bank downtime on attempt 1. High recovery probability (78.5%) indicates a delayed retry of 30 minutes allows time for the bank/UPI network to stabilize without frustrating the user."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Retry scheduled after 30 minutes for \u20b9500.0 payment of customer CUST_2891.",
+      "executed_at": "2026-08-28T23:10:58.860347"
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b9500.0 recovered.",
+      "evaluated_at": "2026-08-28T23:10:58.860818"
+    }
+  },
+  {
+    "timestamp": "2026-08-28T23:11:51.836024",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "First attempt failure caused by temporary bank downtime. High recovery probability (78.5%) and established user history justify a 30-minute delayed retry to allow bank systems to stabilize."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Retry scheduled after 30 minutes for \u20b9500.0 payment of customer CUST_2891.",
+      "executed_at": "2026-08-28T23:11:51.834633"
+    },
+    "outcome": {
+      "status": "NOT_RECOVERED",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "Recovery action was executed, but payment was not recovered.",
+      "evaluated_at": "2026-08-28T23:11:51.835163"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T10:42:46.945309",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 0,
+      "incentive_type": null,
+      "reasoning_summary": "First attempt failed due to user timeout on NetBanking, which requires interactive user input to recover. Given the high recovery probability (81.9%) and established history, an immediate reminder nudge to the customer is the most effective action."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "REMINDER",
+      "status": "EXECUTED",
+      "message": "Payment reminder scheduled.",
+      "executed_at": "2026-08-29T10:42:46.942531",
+      "provider_response": {
+        "success": true,
+        "provider": "recovery_system",
+        "mode": "test",
+        "status": "REMINDER_SCHEDULED",
+        "customer_id": "CUST_2891",
+        "amount": 500.0,
+        "message": "Payment reminder scheduled."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b9500.0 recovered.",
+      "evaluated_at": "2026-08-29T10:42:46.943306"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T10:48:54.757929",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 15,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (81.94%) on attempt 1 for a proven repeat customer. Since NetBanking user timeouts require manual authentication, an automated payment retry will fail; sending a reminder nudge is the safest and most effective strategy."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "REMINDER",
+      "status": "EXECUTED",
+      "message": "Payment reminder scheduled.",
+      "executed_at": "2026-08-29T10:48:54.756692",
+      "provider_response": {
+        "success": true,
+        "provider": "recovery_system",
+        "mode": "test",
+        "status": "REMINDER_SCHEDULED",
+        "customer_id": "CUST_2891",
+        "amount": 500.0,
+        "message": "Payment reminder scheduled."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b9500.0 recovered.",
+      "evaluated_at": "2026-08-29T10:48:54.757345"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T10:51:46.448579",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 0,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (81.94%) on a first attempt user_timeout for NetBanking requires user re-engagement rather than an automated backend retry."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "REMINDER",
+      "status": "EXECUTED",
+      "message": "Payment reminder scheduled.",
+      "executed_at": "2026-08-29T10:51:46.446857",
+      "provider_response": {
+        "success": true,
+        "provider": "recovery_system",
+        "mode": "test",
+        "status": "REMINDER_SCHEDULED",
+        "customer_id": "CUST_2891",
+        "amount": 500.0,
+        "message": "Payment reminder scheduled."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b9500.0 recovered.",
+      "evaluated_at": "2026-08-29T10:51:46.447779"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T10:53:50.661053",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 0,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (81.9%) on first attempt failure caused by user timeout during NetBanking. Since NetBanking requires user re-authentication, an immediate reminder is the safest and most effective strategy."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "REMINDER",
+      "status": "EXECUTED",
+      "message": "Payment reminder scheduled.",
+      "executed_at": "2026-08-29T10:53:50.658931",
+      "provider_response": {
+        "success": true,
+        "provider": "recovery_system",
+        "mode": "test",
+        "status": "REMINDER_SCHEDULED",
+        "customer_id": "CUST_2891",
+        "amount": 500.0,
+        "message": "Payment reminder scheduled."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b9500.0 recovered.",
+      "evaluated_at": "2026-08-29T10:53:50.660552"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T10:56:58.635171",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 0,
+      "incentive_type": null,
+      "reasoning_summary": "First attempt failed due to user timeout during interactive NetBanking. High recovery probability (81.94%) and active customer history justify an immediate checkout reminder without requiring an incentive."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "REMINDER",
+      "status": "EXECUTED",
+      "message": "Payment reminder scheduled.",
+      "executed_at": "2026-08-29T10:56:58.632403",
+      "provider_response": {
+        "success": true,
+        "provider": "recovery_system",
+        "mode": "test",
+        "status": "REMINDER_SCHEDULED",
+        "customer_id": "CUST_2891",
+        "amount": 500.0,
+        "message": "Payment reminder scheduled."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b9500.0 recovered.",
+      "evaluated_at": "2026-08-29T10:56:58.634091"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T11:04:10.990947",
+    "customer_id": "CUST_2891",
+    "amount": 15000.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 0,
+      "incentive_type": null,
+      "reasoning_summary": "First attempt failed due to user timeout on NetBanking, which requires manual user authorization. Given the high recovery probability (78.9%) and established payment history (50 prior attempts), an immediate notification/reminder to complete payment is the safest and most effective recovery action."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b915000.0 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T11:10:16.137643",
+    "customer_id": "CUST_2891",
+    "amount": 15000.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "User timeout failure suggests temporary connectivity issue. High recovery probability (0.7894) and first attempt justify a short delay before retry to avoid immediate repetition."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b915000.0 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T11:10:30.385410",
+    "customer_id": "CUST_2891",
+    "amount": 15000.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 0,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (78.9%) on attempt 1 for a high-value transaction. Because NetBanking requires active user interaction and failed due to user_timeout, an immediate reminder prompt is safest and most effective."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b915000.0 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T11:18:08.800210",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (92.2%) on a first attempt caused by temporary bank downtime. A 30-minute delay allows gateway/bank connectivity to recover before retrying."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T11:18:08.798882",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "pay_test_12345",
+        "delay_minutes": 30,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b9500.0 recovered.",
+      "evaluated_at": "2026-08-29T11:18:08.799487"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T11:19:00.564087",
+    "customer_id": "CUST_2891",
+    "amount": 15000.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (86.17%) on attempt 1. Failure caused by bank downtime requires a short delay (30 mins) for bank servers to recover before retrying."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b915000.0 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T11:40:40.431569",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (0.92) despite bank downtime failure. Delayed retry accounts for temporary gateway issues while avoiding immediate retry risk. Historical success rate (60%) supports retry strategy."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T11:40:40.430422",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "pay_test_12345",
+        "delay_minutes": 30,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b9500.0 recovered.",
+      "evaluated_at": "2026-08-29T11:40:40.431143"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T11:40:41.689912",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (92.2%) on initial attempt. Failure is due to transient bank downtime, making a 30-minute delay optimal for bank system recovery without requiring discounts."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T11:40:41.688674",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "pay_test_12345",
+        "delay_minutes": 30,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b9500.0 recovered.",
+      "evaluated_at": "2026-08-29T11:40:41.689453"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T11:41:26.280730",
+    "customer_id": "CUST_2891",
+    "amount": 15000.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "IMMEDIATE_RETRY",
+      "recommended_delay_minutes": 0,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (0.86) despite first failure, likely due to temporary bank downtime. Immediate retry minimizes friction and leverages high success likelihood."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b915000.0 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T11:58:47.852883",
+    "customer_id": "CUST_2891",
+    "amount": 15000.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "IMMEDIATE_RETRY",
+      "recommended_delay_minutes": 0,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (0.8617) despite bank downtime failure category. First attempt with no prior delays, and historical success rate (60%) supports immediate retry. Amount is moderate, and UPI failures often resolve quickly."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b915000.0 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T12:16:12.544976",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "Bank downtime is a transient issue; a short delay allows time for resolution. High recovery probability (0.9222) and first attempt suggest minimal risk in retrying after a brief pause."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T12:16:12.543615",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "pay_test_12345",
+        "delay_minutes": 30,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b9500.0 recovered.",
+      "evaluated_at": "2026-08-29T12:16:12.544522"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T12:17:00.184819",
+    "customer_id": "CUST_2891",
+    "amount": 69.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "Bank downtime failure is likely temporary; 30-minute delay avoids immediate retry while leveraging high recovery probability (0.9242). Historical success rate (60%) and high attempt number (1) support retry after delay."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T12:17:00.183555",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "pay_test_12345",
+        "delay_minutes": 30,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 69.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b969.0 recovered.",
+      "evaluated_at": "2026-08-29T12:17:00.184351"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T12:17:30.493664",
+    "customer_id": "CUST_2891",
+    "amount": 15000.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "IMMEDIATE_RETRY",
+      "recommended_delay_minutes": 0,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (0.86) despite first failure, likely due to temporary bank downtime. Immediate retry minimizes friction and leverages high success likelihood."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b915000.0 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T12:24:16.367829",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "Bank downtime is a temporary issue; retrying after 30 minutes maximizes recovery probability (0.92) while avoiding immediate retry risks. Historical success rate (60%) and high recovery probability support this action."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T12:24:16.366586",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "pay_test_12345",
+        "delay_minutes": 30,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b9500.0 recovered.",
+      "evaluated_at": "2026-08-29T12:24:16.367381"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T12:35:19.119785",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (92.2%) on attempt 1, but bank downtime requires a short delay to allow system recovery before re-attempting."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T12:35:19.118614",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "pay_test_999",
+        "delay_minutes": 30,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b9500.0 recovered.",
+      "evaluated_at": "2026-08-29T12:35:19.119338"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T12:45:14.802747",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "Failure is due to temporary bank downtime on the first attempt. High recovery probability (92.2%) warrants a short 30-minute delayed retry to allow bank systems to stabilize."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T12:45:14.799865",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "pay_test_999",
+        "delay_minutes": 30,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b9500.0 recovered.",
+      "evaluated_at": "2026-08-29T12:45:14.801827"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T12:53:25.857045",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (92.2%) on first attempt. Failure is caused by temporary bank downtime, so a short delay allows bank systems to recover before retrying."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T12:53:25.855577",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "pay_test_999",
+        "delay_minutes": 30,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b9500.0 recovered.",
+      "evaluated_at": "2026-08-29T12:53:25.856507"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T12:57:44.680048",
+    "customer_id": "CUST_2891",
+    "amount": 500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "First payment failure caused by transient bank downtime. High recovery probability (92.2%) justifies a short delayed retry to allow bank systems to stabilize."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T12:57:44.678913",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "pay_test_999",
+        "delay_minutes": 30,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b9500.0 recovered.",
+      "evaluated_at": "2026-08-29T12:57:44.679661"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T13:08:48.028885",
+    "customer_id": "CUST_2891",
+    "amount": 750.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "First attempt failed due to bank downtime with a high recovery probability (92.34%). A short delay allows bank systems to resolve without needing incentives."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T13:08:48.026032",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "pay_test_1001",
+        "delay_minutes": 30,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 750.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b9750.0 recovered.",
+      "evaluated_at": "2026-08-29T13:08:48.028107"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T13:09:44.949321",
+    "customer_id": "CUST_2891",
+    "amount": 1200.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 1440,
+      "incentive_type": null,
+      "reasoning_summary": "Insufficient funds is a temporary soft decline. With a 62.3% recovery probability on attempt 2, a 24-hour delay allows time for funds replenishment before retrying."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Maximum retry attempts reached."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T13:10:44.243048",
+    "customer_id": "CUST_2891",
+    "amount": 2500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "IMMEDIATE_RETRY",
+      "recommended_delay_minutes": 0,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (78.09%) on attempt #1 for a transient technical UPI failure warrants an immediate retry."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "IMMEDIATE_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T13:10:44.241591",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "pay_test_1003",
+        "delay_minutes": 0,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 2500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b92500.0 recovered.",
+      "evaluated_at": "2026-08-29T13:10:44.242679"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T13:11:26.541374",
+    "customer_id": "CUST_2891",
+    "amount": 3500.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "Checkout abandonment with high recovery probability (82.85%) and solid user history. Sending a gentle reminder after 30 minutes without offering an incentive is the most effective approach."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "REMINDER",
+      "status": "EXECUTED",
+      "message": "Payment reminder scheduled.",
+      "executed_at": "2026-08-29T13:11:26.540463",
+      "provider_response": {
+        "success": true,
+        "provider": "recovery_system",
+        "mode": "test",
+        "status": "REMINDER_SCHEDULED",
+        "customer_id": "CUST_2891",
+        "amount": 3500.0,
+        "message": "Payment reminder scheduled."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 3500.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b93500.0 recovered.",
+      "evaluated_at": "2026-08-29T13:11:26.541008"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T13:11:59.382197",
+    "customer_id": "CUST_2891",
+    "amount": 10000.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "The failure is due to temporary bank downtime on a first attempt with a high recovery probability (86.56%). A 30-minute delay allows the bank network to stabilize before retrying, avoiding an immediate duplicate failure."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T13:11:59.381082",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "pay_test_1005",
+        "delay_minutes": 30,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 10000.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b910000.0 recovered.",
+      "evaluated_at": "2026-08-29T13:11:59.381900"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T14:44:59.168940",
+    "customer_id": "CUST_2230",
+    "amount": 3239.23,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 15,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (86.2%) for a transient network error on attempt 2. A short delayed retry allows UPI network stabilization for a reliable, high-value customer without requiring incentives."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Maximum retry attempts reached."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T14:45:11.047542",
+    "customer_id": "CUST_1847",
+    "amount": 10322.58,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 0,
+      "incentive_type": null,
+      "reasoning_summary": "First attempt failed due to insufficient funds on a high-value bank transfer. A reminder prompts the customer to top up their account before retrying, avoiding immediate re-decline."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b910322.58 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T14:45:18.580080",
+    "customer_id": "CUST_3444",
+    "amount": 7699.51,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 15,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (81.7%) and strong transaction history indicate high intent. A user timeout on mobile UPI requires a payment link reminder rather than an automated retry or discount."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "REMINDER",
+      "status": "EXECUTED",
+      "message": "Payment reminder scheduled.",
+      "executed_at": "2026-08-29T14:45:18.578847",
+      "provider_response": {
+        "success": true,
+        "provider": "recovery_system",
+        "mode": "test",
+        "status": "REMINDER_SCHEDULED",
+        "customer_id": "CUST_3444",
+        "amount": 7699.51,
+        "message": "Payment reminder scheduled."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 7699.51,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b97699.51 recovered.",
+      "evaluated_at": "2026-08-29T14:45:18.579557"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T14:45:37.988966",
+    "customer_id": "CUST_2211",
+    "amount": 1335.31,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (97.15%) with a reliable customer, but the failure is caused by transient bank downtime. A 30-minute delay allows bank servers time to stabilize before re-attempting."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T14:45:37.986864",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "TXN_202606566",
+        "delay_minutes": 30,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 1335.31,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b91335.31 recovered.",
+      "evaluated_at": "2026-08-29T14:45:37.988377"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T14:45:53.801288",
+    "customer_id": "CUST_1433",
+    "amount": 3207.37,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 15,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (83.9%) and solid historical success rate (76.2%) indicate a soft failure due to mobile checkout timeout. A timely reminder without discount incentives is the safest strategy to protect margins on a high-value order."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "REMINDER",
+      "status": "EXECUTED",
+      "message": "Payment reminder scheduled.",
+      "executed_at": "2026-08-29T14:45:53.800026",
+      "provider_response": {
+        "success": true,
+        "provider": "recovery_system",
+        "mode": "test",
+        "status": "REMINDER_SCHEDULED",
+        "customer_id": "CUST_1433",
+        "amount": 3207.37,
+        "message": "Payment reminder scheduled."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 3207.37,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b93207.37 recovered.",
+      "evaluated_at": "2026-08-29T14:45:53.800806"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T14:46:10.981475",
+    "customer_id": "CUST_2496",
+    "amount": 25000.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 5,
+      "incentive_type": null,
+      "reasoning_summary": "High-intent loyal customer (100% past success, 0.915 recovery probability) timed out on a first UPI attempt. A prompt reminder is required to prompt user action without discounting."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b925000.0 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T14:46:44.732357",
+    "customer_id": "CUST_3039",
+    "amount": 1710.4,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 0,
+      "incentive_type": null,
+      "reasoning_summary": "Multiple attempts (3) have failed due to insufficient funds with a low recovery probability (0.4575). Sending a reminder prompts the customer to replenish funds or change payment methods rather than repeatedly triggering gateway declines."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "REMINDER",
+      "status": "EXECUTED",
+      "message": "Payment reminder scheduled.",
+      "executed_at": "2026-08-29T14:46:44.730866",
+      "provider_response": {
+        "success": true,
+        "provider": "recovery_system",
+        "mode": "test",
+        "status": "REMINDER_SCHEDULED",
+        "customer_id": "CUST_3039",
+        "amount": 1710.4,
+        "message": "Payment reminder scheduled."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 1710.4,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b91710.4 recovered.",
+      "evaluated_at": "2026-08-29T14:46:44.731802"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T14:46:55.182629",
+    "customer_id": "CUST_3229",
+    "amount": 11887.74,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "The abandonment was caused by a user timeout for a high-value purchase from a loyal customer (29 past successes). Given the high recovery probability (86.98%), a gentle reminder after 30 minutes is the safest and most effective approach without discounting."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b911887.74 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T14:47:13.123634",
+    "customer_id": "CUST_1394",
+    "amount": 55940.6,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 0,
+      "incentive_type": null,
+      "reasoning_summary": "First attempt failed due to insufficient funds on a high-value bank transfer; a reminder prompts the customer to top up their account without risking repeated payment rejections."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b955940.6 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T14:47:24.749652",
+    "customer_id": "CUST_2892",
+    "amount": 6151.75,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 15,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (83.02%) and strong payment history (33 prior successes) indicate high intent. Since the failure stems from a user timeout on a tablet during checkout, sending a reminder is the safest path to recover this high-value ($6,151.75) transaction without auto-charging."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "REMINDER",
+      "status": "EXECUTED",
+      "message": "Payment reminder scheduled.",
+      "executed_at": "2026-08-29T14:47:24.748328",
+      "provider_response": {
+        "success": true,
+        "provider": "recovery_system",
+        "mode": "test",
+        "status": "REMINDER_SCHEDULED",
+        "customer_id": "CUST_2892",
+        "amount": 6151.75,
+        "message": "Payment reminder scheduled."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 6151.75,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b96151.75 recovered.",
+      "evaluated_at": "2026-08-29T14:47:24.749141"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:11:02.408486",
+    "customer_id": "CUST_1249",
+    "amount": 11515.91,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 15,
+      "incentive_type": null,
+      "reasoning_summary": "High-value checkout abandonment caused by a user timeout. The customer is a loyal repeat buyer with an 84.9% recovery probability, so a timely reminder is recommended without offering an unnecessary incentive."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b911515.91 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:11:12.289670",
+    "customer_id": "CUST_3349",
+    "amount": 19219.12,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "REMINDER",
+      "recommended_delay_minutes": 15,
+      "incentive_type": null,
+      "reasoning_summary": "High-value customer with a 95.45% historical success rate timed out during checkout. With a 95.08% recovery probability, sending a reminder nudge without discounts is the safest and most effective strategy."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b919219.12 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:11:15.687180",
+    "customer_id": "CUST_1889",
+    "amount": 1582.52,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 15,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (0.9415) despite user timeout, with strong historical success rate (0.8125) and low failure count (3). Mobile device suggests potential connectivity issues; short delay mitigates timeout risk without over-incentivizing."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Maximum retry attempts reached."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:11:17.458017",
+    "customer_id": "CUST_3093",
+    "amount": 50000.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 1440,
+      "incentive_type": null,
+      "reasoning_summary": "Third failure due to insufficient funds with low historical success rate (50.91%). Delayed retry after 24 hours to allow customer to resolve funds issue while avoiding immediate retry (low recovery probability: 52.76%)."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b950000.0 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:11:19.229907",
+    "customer_id": "CUST_1024",
+    "amount": 12252.96,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (0.9677) despite bank downtime failure. Historical success rate (78.57%) and low attempt number (1) justify a short delay to avoid immediate retry during potential temporary downtime."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b912252.96 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:11:21.556288",
+    "customer_id": "CUST_2365",
+    "amount": 872.04,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (0.8265) despite user timeout, with strong historical success rate (82.69%). Second attempt suggests user intent; minimal delay avoids further disruption while allowing time for resolution."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Maximum retry attempts reached."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:11:23.271734",
+    "customer_id": "CUST_1060",
+    "amount": 1344.7,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 1440,
+      "incentive_type": null,
+      "reasoning_summary": "Expired card failure with low recovery probability (0.3631) after 3 attempts. Delayed retry allows time for customer to update payment details while avoiding immediate retry failure."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Maximum retry attempts reached."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:11:25.477574",
+    "customer_id": "CUST_3215",
+    "amount": 17483.97,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 1440,
+      "incentive_type": null,
+      "reasoning_summary": "Insufficient funds failure with moderate recovery probability (0.6153). Delayed retry after 24 hours allows time for customer to resolve funds issue while avoiding immediate retry failure. Historical success rate (73%) and low attempt number (1) support this approach."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b917483.97 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:11:27.042140",
+    "customer_id": "CUST_2299",
+    "amount": 10727.74,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (0.85) with first failure due to insufficient funds suggests a short delay may resolve the issue. Historical success rate (90%) supports retrying after a brief wait."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b910727.74 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:11:29.217071",
+    "customer_id": "CUST_2740",
+    "amount": 27516.63,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "ESCALATE",
+      "recommended_delay_minutes": 0,
+      "incentive_type": null,
+      "reasoning_summary": "Failed payment on 3rd attempt with expired card; low recovery probability (0.4146) and high amount ($27,516.63) warrant escalation to customer support for manual intervention or card update request."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b927516.63 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:45:02.244308",
+    "customer_id": "CUST_2945",
+    "amount": 5009.38,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "Low recovery probability (0.5157) and high historical failure rate (64.7%) suggest a delay may improve success. User timeout failures often resolve with a brief pause. Amount and attempt number do not justify escalation or incentives."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T15:45:02.239969",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "TXN_202609968",
+        "delay_minutes": 30,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 5009.38,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b95009.38 recovered.",
+      "evaluated_at": "2026-08-29T15:45:02.243359"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:45:05.760252",
+    "customer_id": "CUST_2246",
+    "amount": 25000.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 15,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (0.8865) despite user timeout failure category. Low attempt number (1) and strong historical success rate (64.71%) justify a quick retry without delay. No incentive needed due to high likelihood of success."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b925000.0 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:45:09.980118",
+    "customer_id": "CUST_1771",
+    "amount": 2716.15,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "Bank downtime is a temporary issue; retrying after a short delay maximizes recovery probability (0.89) while avoiding immediate retry failure. Historical success rate (57.89%) and high recovery probability justify this action."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T15:45:09.978700",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "TXN_202606271",
+        "delay_minutes": 30,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 2716.15,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b92716.15 recovered.",
+      "evaluated_at": "2026-08-29T15:45:09.979605"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:45:16.902678",
+    "customer_id": "CUST_3236",
+    "amount": 10371.17,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (0.8485) despite low historical success rate (45.83%), likely due to transient network error. Delayed retry allows time for resolution while avoiding immediate risk of further failures."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b910371.17 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:45:20.693697",
+    "customer_id": "CUST_1776",
+    "amount": 7356.07,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (0.8971) despite user timeout, with strong historical success rate (0.8824). Delayed retry allows time for user to resolve potential UPI issues without immediate pressure."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T15:45:20.692161",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "TXN_202607864",
+        "delay_minutes": 30,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 7356.07,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b97356.07 recovered.",
+      "evaluated_at": "2026-08-29T15:45:20.693111"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:45:24.495809",
+    "customer_id": "CUST_2623",
+    "amount": 10000.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 1440,
+      "incentive_type": null,
+      "reasoning_summary": "Low recovery probability (0.4547) with high historical failure rate (50%) and insufficient funds as the failure category. A 24-hour delay allows potential fund availability without immediate risk of further failure."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T15:45:24.494427",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "TXN_202608653",
+        "delay_minutes": 1440,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 10000.0,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b910000.0 recovered.",
+      "evaluated_at": "2026-08-29T15:45:24.495281"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:45:28.379055",
+    "customer_id": "CUST_3493",
+    "amount": 50000.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 15,
+      "incentive_type": null,
+      "reasoning_summary": "Network errors are often transient; a short delay reduces retry failure risk. Recovery probability (0.69) is moderate, and historical success rate (76.7%) supports retry. Amount is high, but first attempt justifies a cautious retry."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b950000.0 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:45:30.731811",
+    "customer_id": "CUST_2005",
+    "amount": 5934.2,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "IMMEDIATE_RETRY",
+      "recommended_delay_minutes": 0,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (0.8849) for a first-attempt failure due to bank downtime (temporary issue). Immediate retry is safest given low risk of compounding failures and no historical pattern of repeated failures."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "IMMEDIATE_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T15:45:30.730296",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "TXN_202601423",
+        "delay_minutes": 0,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 5934.2,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b95934.2 recovered.",
+      "evaluated_at": "2026-08-29T15:45:30.731288"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:45:33.584159",
+    "customer_id": "CUST_2651",
+    "amount": 40902.1,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 1440,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (0.8571) but failure due to insufficient funds suggests a short-term liquidity issue. Delaying retry by 24 hours allows time for funds to clear while avoiding immediate retry failure."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b940902.1 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T15:45:36.229548",
+    "customer_id": "CUST_1055",
+    "amount": 26144.41,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "Insufficient funds failure suggests temporary issue; 30-minute delay allows time for fund availability. Recovery probability (0.7184) is high, and historical success rate (58.33%) supports retry. Immediate retry risks another failure, while escalation is premature given attempt count (1)."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b926144.41 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T16:43:12.074360",
+    "customer_id": "CUST_1944",
+    "amount": 50000.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 15,
+      "incentive_type": null,
+      "reasoning_summary": "Low recovery probability (0.4288) with user_timeout failure suggests retry after brief delay. Historical success rate (61.54%) and high attempt number (2) indicate diminishing returns for immediate retries."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b950000.0 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T16:43:13.738350",
+    "customer_id": "CUST_1317",
+    "amount": 4519.5,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 1440,
+      "incentive_type": null,
+      "reasoning_summary": "Insufficient funds failure with low recovery probability (0.5391) and high historical failure rate (35.9%). Delayed retry after 24 hours allows time for fund replenishment while avoiding immediate risk of another failure."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "DELAYED_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T16:43:13.735731",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "TXN_202608665",
+        "delay_minutes": 1440,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 4519.5,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b94519.5 recovered.",
+      "evaluated_at": "2026-08-29T16:43:13.738062"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T16:43:15.255441",
+    "customer_id": "CUST_2636",
+    "amount": 42973.88,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (0.943) despite bank downtime failure, low attempt number (1), and strong historical success rate (80%). Delay accounts for temporary bank issues while avoiding immediate retry risks."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b942973.88 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T16:43:16.896868",
+    "customer_id": "CUST_3382",
+    "amount": 100000.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 1440,
+      "incentive_type": null,
+      "reasoning_summary": "Low recovery probability (0.31) with high historical failure rate (57%) and insufficient funds as primary failure cause. Delayed retry after 24 hours allows time for customer to resolve funds issue while avoiding immediate retry failure."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b9100000.0 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T16:43:18.676457",
+    "customer_id": "CUST_1751",
+    "amount": 14004.55,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 1440,
+      "incentive_type": null,
+      "reasoning_summary": "Expired card failure with low recovery probability (0.4636) and high historical failure rate (28%). Delay retry to allow customer time to update payment details while minimizing risk of further failed attempts."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b914004.55 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T16:43:20.712094",
+    "customer_id": "CUST_2628",
+    "amount": 16031.56,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 1440,
+      "incentive_type": null,
+      "reasoning_summary": "Insufficient funds failure suggests temporary liquidity issue. Delayed retry after 24 hours maximizes recovery probability (0.6756) while respecting historical behavior (90% success rate). Immediate retry risks further failure; escalation premature given low attempt count (1/30)."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b916031.56 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T16:43:22.557286",
+    "customer_id": "CUST_1760",
+    "amount": 2155.45,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "User timeout failure suggests temporary connectivity issue. High recovery probability (0.8082) and low attempt number (2) justify a short delay before retrying. No incentive needed due to high historical success rate."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Maximum retry attempts reached."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T16:43:24.980966",
+    "customer_id": "CUST_2097",
+    "amount": 1326.1,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "IMMEDIATE_RETRY",
+      "recommended_delay_minutes": 0,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (0.8619) for a network error suggests immediate retry is optimal. Low attempt number (1) and historical success rate (59%) support this. Amount ($1326.1) is moderate, and failure category is transient (network error)."
+    },
+    "guardrail": {
+      "allowed": true,
+      "reason": "Action passed all merchant guardrails."
+    },
+    "execution": {
+      "success": true,
+      "action_type": "IMMEDIATE_RETRY",
+      "status": "EXECUTED",
+      "message": "Payment retry action scheduled in Razorpay test environment.",
+      "executed_at": "2026-08-29T16:43:24.979591",
+      "provider_response": {
+        "success": true,
+        "provider": "razorpay",
+        "mode": "test",
+        "status": "ACTION_SCHEDULED",
+        "payment_id": "TXN_202606095",
+        "delay_minutes": 0,
+        "message": "Payment retry action scheduled in Razorpay test environment."
+      }
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "amount_recovered": 1326.1,
+      "recovery_success": true,
+      "message": "Payment successfully recovered. \u20b91326.1 recovered.",
+      "evaluated_at": "2026-08-29T16:43:24.980424"
+    }
+  },
+  {
+    "timestamp": "2026-08-29T16:43:27.528545",
+    "customer_id": "CUST_3259",
+    "amount": 12917.15,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 30,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (0.8139) despite user timeout failure, with strong historical success rate (73.08%). Desktop user likely interrupted; short delay reduces friction while maintaining urgency."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b912917.15 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  },
+  {
+    "timestamp": "2026-08-29T16:43:29.645425",
+    "customer_id": "CUST_1010",
+    "amount": 25000.0,
+    "ai_provider": "Gemini/Mistral",
+    "recommendation": {
+      "action_type": "DELAYED_RETRY",
+      "recommended_delay_minutes": 15,
+      "incentive_type": null,
+      "reasoning_summary": "High recovery probability (0.82) despite user timeout failure category, but second attempt suggests caution. Delay reduces risk of immediate repeat failure while maintaining urgency."
+    },
+    "guardrail": {
+      "allowed": false,
+      "reason": "Amount \u20b925000.0 exceeds the auto-action limit of \u20b910000.0."
+    },
+    "execution": {
+      "success": false,
+      "status": "BLOCKED",
+      "message": "Action blocked by guardrail."
+    },
+    "outcome": {
+      "status": "UNCERTAIN",
+      "amount_recovered": 0.0,
+      "recovery_success": false,
+      "message": "No action executed."
+    }
+  }
+]

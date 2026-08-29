@@ -1,0 +1,40 @@
+# Environment
+.env
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# ML / generated files
+*.pkl
+*.pickle
+*.joblib
+
+# Node
+node_modules/
+frontend/node_modules/
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
