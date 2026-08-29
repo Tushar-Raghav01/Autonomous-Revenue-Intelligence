@@ -28,7 +28,6 @@ build/
 # ML / generated files
 *.pkl
 *.pickle
-*.joblib
 
 # Node
 node_modules/
